@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-risk-result',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./risk-result.component.css']
 })
 export class RiskResultComponent implements OnInit {
+
+  faHeart = faHeart;
 
   constructor() { }
 

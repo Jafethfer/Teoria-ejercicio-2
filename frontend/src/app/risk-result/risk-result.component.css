@@ -1,0 +1,45 @@
+.container-fluid {
+    width: 500px;
+}
+
+.titleContainer {
+    background-color: #1593A9;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.titleContainer h2 {
+    font-family: cambay;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.riskContainer {
+    margin: 20px;
+    box-sizing: border-box;
+    background-color: #1593A9;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.risk {
+    padding: 0 20%;
+    height: 140px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 64px;
+    line-height: 104px;
+    align-items: center;
+}
+
+.risk fa-icon {
+    color: #950000;
+    font-size: 100px;
+}

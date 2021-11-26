@@ -1,0 +1,23 @@
+.titleContainer {
+    background-color: #1593A9;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.titleContainer h2 {
+    font-family: cambay;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.charContainer {
+    margin: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}

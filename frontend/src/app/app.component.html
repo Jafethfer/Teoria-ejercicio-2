@@ -1,17 +1,20 @@
 <div class="container-fluid mt-3">
-  <div class="row">
-    <div class="col-5">
-      <app-formulario></app-formulario>
+    <div class="row">
+        <div class="col-5">
+            <app-formulario></app-formulario>
+        </div>
+        <div class="col-7">
+            <div id="TituloSimulador">
+                <p id="TextoTitulo">
+                    Simulador de riesgos cardiovasculares
+                </p>
+            </div>
+            <div style="display: flex;">
+                <app-risk-result style="width: 50%;"></app-risk-result>
+                <app-food-graph style="width: 50%;"></app-food-graph>
+            </div>
+        </div>
     </div>
-    <div class="col-7">
-      <div id="TituloSimulador">
-        <p id="TextoTitulo">
-          Simulador de riesgos cardiovasculares
-        </p>
-      </div>
-      <app-risk-result></app-risk-result>
-    </div>
-  </div>
 </div>
 
 <router-outlet></router-outlet>

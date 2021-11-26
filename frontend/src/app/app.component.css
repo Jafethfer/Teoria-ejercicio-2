@@ -1,8 +1,11 @@
-#TituloSimulador{
-  border: 3px solid black;
-  position: absolute;
+#TituloSimulador {
+    border: 3px solid black;
+    width: 400px;
+    margin: 10PX auto;
+    text-align: center;
 }
-#TextoTitulo{
-  padding: 5px 15px 5px 15px;
-  margin-bottom: 0%;
+
+#TextoTitulo {
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 0%;
 }

@@ -8,6 +8,8 @@ import { RiskResultComponent } from './risk-result/risk-result.component';
 import { FoodGraphComponent } from './food-graph/food-graph.component';
 import { RiskGraphComponent } from './risk-graph/risk-graph.component';
 import { FoodButtonComponent } from './food-button/food-button.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FoodButtonComponent } from './food-button/food-button.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

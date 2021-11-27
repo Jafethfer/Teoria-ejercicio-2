@@ -14,6 +14,6 @@ export class FormularioComponent implements OnInit {
   }
 
   helpModal(longContent:any){
-    this.modalService.open(longContent,{scrollable:true})
+    this.modalService.open(longContent,{scrollable:true,size:'lg'})
   }
 }

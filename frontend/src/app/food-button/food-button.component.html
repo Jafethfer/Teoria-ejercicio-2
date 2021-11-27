@@ -1,1 +1,20 @@
-<p>food-button works!</p>
+<button class="btnAlimentos" (click)="open(content)" type="button">Tabla de alimentos</button>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Seleccione los alimentos que consume:</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+         <span aria-hidden="true">&times;</span>
+       </button>
+    </div>
+    <div class="modal-body container">
+        <div class="row">
+            <app-alimento-item *ngFor="let alimento of alimentos" [alimento]="alimento.alimento" [colesterol]="alimento.colesterol" [img]="alimento.img"></app-alimento-item>
+            <app-alimento-item *ngFor="let alimento of alimentos" [alimento]="alimento.alimento" [colesterol]="alimento.colesterol" [img]="alimento.img"></app-alimento-item>
+            <app-alimento-item *ngFor="let alimento of alimentos" [alimento]="alimento.alimento" [colesterol]="alimento.colesterol" [img]="alimento.img"></app-alimento-item>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
+    </div>
+</ng-template>

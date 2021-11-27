@@ -10,6 +10,7 @@ import { RiskGraphComponent } from './risk-graph/risk-graph.component';
 import { FoodButtonComponent } from './food-button/food-button.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AlimentoItemComponent } from './alimento-item/alimento-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RiskResultComponent,
     FoodGraphComponent,
     RiskGraphComponent,
-    FoodButtonComponent
+    FoodButtonComponent,
+    AlimentoItemComponent
   ],
   imports: [
     BrowserModule,

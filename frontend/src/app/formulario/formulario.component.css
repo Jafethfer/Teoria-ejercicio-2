@@ -1,3 +1,25 @@
 #formulario{
-
+  background-color: #9BD7F0;
+  border: 2px black solid;
+}
+.field-container{
+  background-color: white;
+  border: 2px black solid;
+  padding: 5px 15px 5px 15px;
+  border-radius: 15px;
+  margin-left: 15px;
+  text-align: center;
+  width: 40%;
+}
+.mini-field-container{
+  background-color: white;
+  border: 2px black solid;
+  padding: 5px 15px 5px 15px;
+  border-radius: 15px;
+  margin-left: 15px;
+  text-align: center;
+  width: fit-content;
+}
+#femRadio{
+  margin-left: 15px;
 }

@@ -11,18 +11,18 @@ export class FoodButtonComponent implements OnInit {
   alimentos = [
     {
       alimento: 'Huevo',
-      colesterol: 500/5,
+      colesterol:420/5,
       img: 'huevos.png'
     },
     {
       alimento: 'Higado',
       colesterol: 370/5,
-      img: 'higado.png.png'
+      img: 'higado.png'
     },
     {
       alimento: 'Mayonesa',
       colesterol: 260/5,
-      img: 'huevo.png'
+      img: 'mayonesa.png'
     },
     {
       alimento: 'Mantequilla',
@@ -33,6 +33,46 @@ export class FoodButtonComponent implements OnInit {
       alimento: 'Calamares',
       colesterol: 220/5,
       img: 'calamares.png'
+    },
+    {
+      alimento: 'Leche en polvo',
+      colesterol: 120/5,
+      img: 'lechePolvo.jpg'
+    },
+    {
+      alimento: 'Sardina',
+      colesterol: 100/5,
+      img: 'sardina.jpg'
+    },
+    {
+      alimento: 'Cordero',
+      colesterol: 78/5,
+      img: 'cordero.png'
+    },
+    {
+      alimento: 'Chocolate',
+      colesterol: 77/5,
+      img: 'chocolate.png'
+    },
+    {
+      alimento: 'Salchichas',
+      colesterol: 72/5,
+      img: 'salchichas.png'
+    },
+    {
+      alimento: 'Manteca',
+      colesterol: 70/5,
+      img: 'manteca.png'
+    },
+    {
+      alimento: 'Morcilla',
+      colesterol: 70/5,
+      img: 'morcilla.jpg'
+    },
+    {
+      alimento: 'Jamon',
+      colesterol: 70/5,
+      img: 'jamon.jpg'
     },
   ]
 

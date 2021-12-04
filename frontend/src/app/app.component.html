@@ -1,7 +1,7 @@
 <div class="container-fluid mt-3">
     <div class="row">
         <div class="col-4">
-            <app-formulario></app-formulario>
+            <app-formulario (resultsEvent)="getGraphData($event)"></app-formulario>
         </div>
         <div class="col-8">
             <div class="container-fluid">
@@ -14,14 +14,14 @@
                 </div>
                 <div class="row">
                     <div class="col-6" style="padding: 0;">
-                        <app-risk-result></app-risk-result>
+                        <app-risk-result [riskResult]="riskResult"></app-risk-result>
                     </div>
                     <div class="col-6" style="padding: 0%;">
                         <app-food-graph></app-food-graph>
                     </div>
                 </div>
                 <div class="row" style="justify-content: center;">
-                    <app-risk-graph></app-risk-graph>
+                    <app-risk-graph [dataInput]="graphData" [labelsInput]="labelsData"></app-risk-graph>
                 </div>
                 <app-food-button></app-food-button>
             </div>

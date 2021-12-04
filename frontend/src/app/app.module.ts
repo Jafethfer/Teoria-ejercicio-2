@@ -11,6 +11,7 @@ import { FoodButtonComponent } from './food-button/food-button.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AlimentoItemComponent } from './alimento-item/alimento-item.component';
+import {ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AlimentoItemComponent } from './alimento-item/alimento-item.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

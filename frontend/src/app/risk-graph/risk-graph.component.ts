@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import {
   Chart,
   ArcElement,
@@ -25,16 +25,20 @@ import {
   Title,
   Tooltip
 } from 'chart.js';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-risk-graph',
   templateUrl: './risk-graph.component.html',
   styleUrls: ['./risk-graph.component.css']
 })
-export class RiskGraphComponent implements OnInit {
+export class RiskGraphComponent implements OnChanges,OnInit {
+  @Input() dataInput = []
+  @Input() labelsInput = []
 
+  data:any
 
-  constructor() { }
+  myChart:any;
 
   ngOnInit(): void {
     Chart.register(
@@ -62,23 +66,50 @@ export class RiskGraphComponent implements OnInit {
       Tooltip
     );
 
-    const data = {
-      labels: [50,60,70,80],
+    this.data = {
+      labels: this.labelsInput,
       datasets: [{
         label: 'Gráfico de riesgos hasta los 80 años',
-        data: [14,20,25,20],
+        data: this.dataInput,
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1
       }]
     };
 
-    const myChart = new Chart('riskChart',
+    this.myChart = new Chart('riskChart',
     {
       type: 'line',
-      data:data,
+      data:this.data,
     })
+
   }
+
+  constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.myChart==undefined){
+      return
+    }
+    this.myChart.destroy()
+    this.data = {
+      labels: changes.labelsInput.currentValue,
+      datasets: [{
+        label: 'Gráfico de riesgos hasta los 80 años',
+        data: changes.dataInput.currentValue,
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+      }]
+    };
+    this.myChart = new Chart('riskChart',
+    {
+      type: 'line',
+      data:this.data,
+    })
+
+  }
+
 
 
 

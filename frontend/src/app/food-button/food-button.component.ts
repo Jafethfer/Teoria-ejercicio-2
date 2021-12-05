@@ -42,7 +42,7 @@ export class FoodButtonComponent implements OnInit {
       colesterol: 230,
       img: 'mantequilla.png',
       status: 'inactive',
-      anual: 2.250/100*230/100
+      anual: 2250/100*230/100
     },
     {
       id: 5,

@@ -113,6 +113,7 @@ export class FoodGraphComponent implements OnChanges,OnInit {
       if(changes.graphedFood.currentValue.alimentos[index].status=='active'){
         this.labels.push(changes.graphedFood.currentValue.alimentos[index].alimento)
         this.graphData.push(changes.graphedFood.currentValue.alimentos[index].anual)
+        console.log(changes.graphedFood.currentValue.alimentos[index].anual)
       }
     }
     this.data = {

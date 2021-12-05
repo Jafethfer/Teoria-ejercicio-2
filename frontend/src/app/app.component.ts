@@ -10,7 +10,7 @@ export class AppComponent {
   graphData = []
   labelsData = []
   riskResult:any
-  graphFood = []
+  graphFood:any = {}
 
   getGraphData(results:any){
     this.graphData = results.results

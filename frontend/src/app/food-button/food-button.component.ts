@@ -135,7 +135,6 @@ export class FoodButtonComponent implements OnInit {
 
   open(content:any){
     this.modalService.open(content, {size: 'xl'});
-    console.log(this.alimentos)
   }
 
   saveFood(event:any){
@@ -145,7 +144,7 @@ export class FoodButtonComponent implements OnInit {
         localStorage.setItem('alimentos', JSON.stringify(this.alimentos));
       }
     }
-    this.foodEvent.emit(this.alimentos)
+    this.foodEvent.emit({'alimentos':this.alimentos})
   }
 
   deleteFood(event:any){
@@ -155,6 +154,9 @@ export class FoodButtonComponent implements OnInit {
         localStorage.setItem('alimentos', JSON.stringify(this.alimentos));
       }
     }
+    let newArray = new Array
+    newArray = this.alimentos
+    this.foodEvent.emit({'alimentos':this.alimentos})
   }
 
 }

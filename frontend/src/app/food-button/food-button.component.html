@@ -9,7 +9,7 @@
     </div>
     <div class="modal-body container">
         <div class="row">
-            <app-alimento-item *ngFor="let alimento of alimentos" [alimento]="alimento.alimento" [colesterol]="alimento.colesterol" [img]="alimento.img" [statusClass]="alimento.status" (selectedEvent)="saveFood($event)" (deleteEvent)="deleteFood($event)"></app-alimento-item>
+            <app-alimento-item id="alimento{{ alimento.id }}" *ngFor="let alimento of alimentos" [alimento]="alimento.alimento" [colesterol]="alimento.colesterol/5" [img]="alimento.img" [statusClass]="alimento.status" (selectedEvent)="saveFood($event)" (deleteEvent)="deleteFood($event)"></app-alimento-item>
         </div>
     </div>
 </ng-template>

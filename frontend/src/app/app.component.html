@@ -17,13 +17,13 @@
                         <app-risk-result [riskResult]="riskResult"></app-risk-result>
                     </div>
                     <div class="col-6" style="padding: 0%;">
-                        <app-food-graph></app-food-graph>
+                        <app-food-graph [graphedFood]="graphFood"></app-food-graph>
                     </div>
                 </div>
                 <div class="row" style="justify-content: center;">
                     <app-risk-graph [dataInput]="graphData" [labelsInput]="labelsData"></app-risk-graph>
                 </div>
-                <app-food-button></app-food-button>
+                <app-food-button (foodEvent)="getSelectedFood($event)"></app-food-button>
             </div>
         </div>
     </div>

@@ -9,10 +9,7 @@
     </div>
     <div class="modal-body container">
         <div class="row">
-            <app-alimento-item *ngFor="let alimento of alimentos" [alimento]="alimento.alimento" [colesterol]="alimento.colesterol" [img]="alimento.img"></app-alimento-item>
+            <app-alimento-item *ngFor="let alimento of alimentos" [alimento]="alimento.alimento" [colesterol]="alimento.colesterol" [img]="alimento.img" [statusClass]="alimento.status" (selectedEvent)="saveFood($event)" (deleteEvent)="deleteFood($event)"></app-alimento-item>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
     </div>
 </ng-template>

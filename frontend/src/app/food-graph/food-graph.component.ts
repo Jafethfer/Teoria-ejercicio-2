@@ -107,6 +107,13 @@ export class FoodGraphComponent implements OnChanges,OnInit {
       return
     }
     this.myChart.destroy()
+    this.graphData = []
+    for(let index in this.graphedFood){
+      if(this.graphedFood[index].status=='active'){
+        this.labels.push(this.graphedFood[index].alimento)
+        this.graphData.push(this.graphedFood[index].colesterol)
+      }
+    }
     this.data = {
       labels: this.labels,
       datasets: [{
@@ -116,6 +123,19 @@ export class FoodGraphComponent implements OnChanges,OnInit {
           data: [5,3,2,4,1],
       }]
     };
+    this.myChart = new Chart("myChar", {
+      type: 'bar',
+      data: this.data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+            display: false
+          },
+        }
+      },
+    });
 
   }
 }

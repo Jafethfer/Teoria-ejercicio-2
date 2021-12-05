@@ -11,11 +11,12 @@ import { DecimalPipe } from '@angular/common';
 export class RiskResultComponent implements OnInit {
   @Input() riskResult = 0
   faHeart = faHeart;
-
+ 
   constructor(private riesgoServicio:RiesgoCardiacoService) { }
 
   ngOnInit(): void {
 
+    this.riskResult = Math.round(this.riesgoServicio.riesgoCardiaco('m',57,238,52,150,92,false,false)*100);
   }
 
 }

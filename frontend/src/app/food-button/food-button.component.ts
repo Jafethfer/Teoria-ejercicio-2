@@ -42,7 +42,7 @@ export class FoodButtonComponent implements OnInit {
       colesterol: 230,
       img: 'mantequilla.png',
       status: 'inactive',
-      anual: 2.250/100*230/100
+      anual: 2250/100*230/100
     },
     {
       id: 5,
@@ -125,17 +125,16 @@ export class FoodButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem('alimentos') == null) {
+/*     if (localStorage.getItem('alimentos') == null) {
       localStorage.setItem('alimentos', JSON.stringify(this.alimentos));
     }
     else{
       this.alimentos = JSON.parse(localStorage.getItem('alimentos')+'');
-    }
+    } */
   }
 
   open(content:any){
     this.modalService.open(content, {size: 'xl'});
-    console.log(this.alimentos)
   }
 
   saveFood(event:any){

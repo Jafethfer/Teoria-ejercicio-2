@@ -1,0 +1,46 @@
+<button class="btn btn-primary" (click)="open(content)" type="button">Historial</button>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Historial de cálculos de riesgo</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body container">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <th>Fecha</th>
+                    <th>Sexo</th>
+                    <th>Edad</th>
+                    <th>Colesterol (mg/dl)</th>
+                    <th>DHL (mg/dl)</th>
+                    <th>Presión Sistolica</th>
+                    <th>Presión Diastólica</th>
+                    <th>Diabetico</th>
+                    <th>Fumador</th>
+                    <th>Riesgo %</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of historial">
+                        <td>{{ (item.fecha)}}</td>
+                        <td>{{ item.sexo }}</td>
+                        <td>{{ item.edad }}</td>
+                        <td>{{ item.colesterol }}</td>
+                        <td>{{ item.HDL}}</td>
+                        <td>{{ item.PresionS }}</td>
+                        <td>{{ item.PresionD }}</td>
+
+                        <td *ngIf="item.diabetes">Si</td>
+                        <td *ngIf="!item.diabetes">No</td>
+                        <td *ngIf="item.fumador">Si</td>
+                        <td *ngIf="!item.fumador">No</td>
+                        <td>{{ item.riesgo }}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</ng-template>

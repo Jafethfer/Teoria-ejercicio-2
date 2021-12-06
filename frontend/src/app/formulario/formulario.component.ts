@@ -12,21 +12,33 @@ import { Output,EventEmitter } from '@angular/core';
 export class FormularioComponent implements OnInit {
   faQuestionCircle = faQuestionCircle
   formularioDatos = new FormGroup({
-    Sexo: new FormControl(''),
-    Edad: new FormControl(''),
-    Colesterol: new FormControl(''),
-    HDL: new FormControl(''),
-    PresionS: new FormControl(''),
-    PresionD: new FormControl(''),
-    Diabetes: new FormControl(''),
-    Fumador: new FormControl('')
+    Sexo: new FormControl('m'),
+    Edad: new FormControl('57'),
+    Colesterol: new FormControl('238'),
+    HDL: new FormControl('52'),
+    PresionS: new FormControl('150'),
+    PresionD: new FormControl('92'),
+    Diabetes: new FormControl('False'),
+    Fumador: new FormControl('False')
   })
   @Output() resultsEvent = new EventEmitter<any>();
+
+
+  historial:any = [];
 
 
   constructor(private modalService:NgbModal,private riskService:RiesgoCardiacoService) { }
 
   ngOnInit(): void {
+
+    if(localStorage.getItem('historial') == null ){
+      JSON.stringify(this.historial);
+    }else{
+      this.historial = JSON.parse(localStorage.getItem('historial')+'')
+      
+    }
+    console.log(this.historial);
+
   }
 
   helpModal(longContent:any){
@@ -72,5 +84,21 @@ export class FormularioComponent implements OnInit {
       Edad = Edad+10
     }
     this.resultsEvent.emit({results:results,labels:labels})
+    this.historial.push({
+      sexo: this.formularioDatos.get('Sexo')?.value,
+      edad: Edad,
+      colesterol: this.formularioDatos.get('Colesterol')?.value,
+      HDL: this.formularioDatos.get('HDL')?.value,
+      PresionS: this.formularioDatos.get('PresionS')?.value,
+      PresionD: this.formularioDatos.get('PresionD')?.value,
+      diabetes: Diabetes,
+      fumador: Fumador,
+      riesgo: results[0].toFixed(),
+      fecha: (new Date).toLocaleDateString('en-US'),
+      alimentos: JSON.parse(localStorage.getItem('alimentos')+'')
+    }
+    );
+
+    localStorage.setItem('historial', JSON.stringify(this.historial));
   }
 }

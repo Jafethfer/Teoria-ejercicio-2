@@ -11,7 +11,8 @@ import { FoodButtonComponent } from './food-button/food-button.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AlimentoItemComponent } from './alimento-item/alimento-item.component';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
+import { HistorialRiesgoComponent } from './historial-riesgo/historial-riesgo.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ReactiveFormsModule} from '@angular/forms'
     FoodGraphComponent,
     RiskGraphComponent,
     FoodButtonComponent,
-    AlimentoItemComponent
+    AlimentoItemComponent,
+    HistorialRiesgoComponent
   ],
   imports: [
     BrowserModule,

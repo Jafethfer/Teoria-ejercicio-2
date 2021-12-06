@@ -1,163 +1,161 @@
 <div class="container-fluid" id="formulario">
-  <div class="row">
-    <div class="col-10" style="text-align: center;">
-      <div style="margin-top: 8px;font-size: 30px;">
-        Ingrese sus datos
-      </div>
-    </div>
-    <div class="col-2" style="padding:0%;text-align: end;">
-      <button class="btn" type="button" style="padding: 0%;margin:10px 10px 0px 0px" (click)="helpModal(longContent)">
+    <div class="row">
+        <div class="col-10" style="text-align: center;">
+            <div style="margin-top: 8px;font-size: 30px;">
+                Ingrese sus datos
+            </div>
+        </div>
+        <div class="col-2" style="padding:0%;text-align: end;">
+            <button class="btn" type="button" style="padding: 0%;margin:10px 10px 0px 0px" (click)="helpModal(longContent)">
         <fa-icon [icon]="faQuestionCircle"></fa-icon>
       </button>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="field-container">
-      Sexo
+    <div class="row">
+        <div class="field-container">
+            Sexo
+        </div>
     </div>
-  </div>
-  <div class="row mt-2">
-    <form [formGroup]="formularioDatos">
-      <input formControlName="Sexo" type="radio" name="Sexo" value='m' id="femRadio">
-      <label for="femRadio" style="margin: 0px 15px 0px 15px;">Femenino</label>
-      <input formControlName="Sexo" type="radio" name="Sexo" value='h' id="mascRadio">
-      <label for="mascRadio" style="margin: 5px 0px 0px 15px;">Masculino</label><br>
-    </form>
-  </div>
-  <div class="row mt-2">
-    <div class="field-container">
-      Edad (en años)
-    </div>
-  </div>
-  <div class="row mt-2">
-    <form [formGroup]="formularioDatos">
-      <input formControlName="Edad" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
-    </form>
-  </div>
-  <div class="row mt-2">
-    <div class="field-container">
-      Colesterol (mg/dl)
-    </div>
-  </div>
-  <div class="row mt-2">
-    <form [formGroup]="formularioDatos">
-      <input formControlName="Colesterol" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
-    </form>
-  </div>
-  <div class="row mt-2">
-    <div class="field-container">
-      HDL (mg/dl)
-    </div>
-  </div>
-  <div class="row mt-2">
-    <form [formGroup]="formularioDatos">
-      <input formControlName="HDL" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
-    </form>
-  </div>
-  <div class="row mt-2">
-    <div class="field-container">
-      Presión Sistólica
-    </div>
-  </div>
-  <div class="row mt-2">
-    <form [formGroup]="formularioDatos">
-      <input formControlName="PresionS" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
-    </form>
-  </div>
-  <div class="row mt-2">
-    <div class="field-container">
-      Presión Diastólica
-    </div>
-  </div>
-  <div class="row mt-2">
-    <form [formGroup]="formularioDatos">
-      <input formControlName="PresionD" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
-    </form>
-  </div>
-  <div class="row mt-2">
-    <div class="col-6" style="padding: 0%;">
-      <div class="mini-field-container">
-        Diabetes
-      </div>
-      <div>
+    <div class="row mt-2">
         <form [formGroup]="formularioDatos">
-          <input formControlName="Diabetes" type="radio" name="Diabetes" id="diabRadioYes" value='True' style="margin:20px 0px 0px 15px">
-          <label for="diabRadioYes" style="margin: 0px 15px 0px 15px;">Si</label><br>
-          <input formControlName="Diabetes" type="radio" name="Diabetes" id="diabRadioNo" value='False' style="margin: 0px 0px 0px 15px;">
-          <label for="diabRadioNo" style="margin: 5px 0px 0px 15px;">No</label><br>
+            <input formControlName="Sexo" type="radio" name="Sexo" value='m' id="femRadio">
+            <label for="femRadio" style="margin: 0px 15px 0px 15px;">Femenino</label>
+            <input formControlName="Sexo" type="radio" name="Sexo" value='h' id="mascRadio">
+            <label for="mascRadio" style="margin: 5px 0px 0px 15px;">Masculino</label><br>
         </form>
-      </div>
     </div>
-    <div class="col-6" style="padding: 0%;">
-      <div class="mini-field-container">
-        Fumador
-      </div>
-      <div>
+    <div class="row mt-2">
+        <div class="field-container">
+            Edad (en años)
+        </div>
+    </div>
+    <div class="row mt-2">
         <form [formGroup]="formularioDatos">
-          <input formControlName="Fumador" type="radio" name="Fumador" id="smokeRadioYes" value='True' style="margin:20px 0px 0px 15px">
-          <label for="smokeRadioYes" style="margin: 0px 15px 0px 15px;">Si</label><br>
-          <input formControlName="Fumador" type="radio" name="Fumador" id="smokeRadioNo" value='False' style="margin: 0px 0px 0px 15px;">
-          <label for="smokeRadioNo" style="margin: 5px 0px 0px 15px;">No</label><br>
+            <input formControlName="Edad" value="57" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
         </form>
-      </div>
     </div>
-  </div>
-  <div class="row mt-2">
-    <button class="btn btn-primary" type="button" (click)="Calcular()">Calcular!</button>
-  </div>
+    <div class="row mt-2">
+        <div class="field-container">
+            Colesterol (mg/dl)
+        </div>
+    </div>
+    <div class="row mt-2">
+        <form [formGroup]="formularioDatos">
+            <input formControlName="Colesterol" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
+        </form>
+    </div>
+    <div class="row mt-2">
+        <div class="field-container">
+            HDL (mg/dl)
+        </div>
+    </div>
+    <div class="row mt-2">
+        <form [formGroup]="formularioDatos">
+            <input formControlName="HDL" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
+        </form>
+    </div>
+    <div class="row mt-2">
+        <div class="field-container">
+            Presión Sistólica
+        </div>
+    </div>
+    <div class="row mt-2">
+        <form [formGroup]="formularioDatos">
+            <input formControlName="PresionS" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
+        </form>
+    </div>
+    <div class="row mt-2">
+        <div class="field-container">
+            Presión Diastólica
+        </div>
+    </div>
+    <div class="row mt-2">
+        <form [formGroup]="formularioDatos">
+            <input formControlName="PresionD" type="number" class="form-control" style="width: 75%;margin-left: 15px;border: 2px black solid;">
+        </form>
+    </div>
+    <div class="row mt-2">
+        <div class="col-6" style="padding: 0%;">
+            <div class="mini-field-container">
+                Diabetes
+            </div>
+            <div>
+                <form [formGroup]="formularioDatos">
+                    <input formControlName="Diabetes" type="radio" name="Diabetes" id="diabRadioYes" value='True' style="margin:20px 0px 0px 15px">
+                    <label for="diabRadioYes" style="margin: 0px 15px 0px 15px;">Si</label><br>
+                    <input formControlName="Diabetes" type="radio" name="Diabetes" id="diabRadioNo" value='False' style="margin: 0px 0px 0px 15px;">
+                    <label for="diabRadioNo" style="margin: 5px 0px 0px 15px;">No</label><br>
+                </form>
+            </div>
+        </div>
+        <div class="col-6" style="padding: 0%;">
+            <div class="mini-field-container">
+                Fumador
+            </div>
+            <div>
+                <form [formGroup]="formularioDatos">
+                    <input formControlName="Fumador" type="radio" name="Fumador" id="smokeRadioYes" value='True' style="margin:20px 0px 0px 15px">
+                    <label for="smokeRadioYes" style="margin: 0px 15px 0px 15px;">Si</label><br>
+                    <input formControlName="Fumador" type="radio" name="Fumador" id="smokeRadioNo" value='False' style="margin: 0px 0px 0px 15px;">
+                    <label for="smokeRadioNo" style="margin: 5px 0px 0px 15px;">No</label><br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 ">
+        <button class="btn btn-primary" type="button" (click)="Calcular()">Calcular!</button>
+        <app-historial-riesgo></app-historial-riesgo>
+    </div>
 </div>
 
 <ng-template #longContent let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">Simulador de riesgo cardiovascular</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <div class="modal-header">
+        <h4 class="modal-title">Simulador de riesgo cardiovascular</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  <div class="modal-body">
-    <h2>Modelo Framingham</h2>
-    <p>
-      El metodo Framingham constituye un pilar básico, y en diferentes formas es ampliamente utilizado
-      para la toma de decisiones terapéuticas en base a la estimación de riesgo proporcionada por el modelo
-      al introducir las características de riesgo del paciente concreto. Es tan popular que incluso existen
-      calculadoras de bolsillo que implementan el algoritmo, y también diferentes páginas Web en las que
-      se puede efectuar dicho cálculo.
-    </p>
-    <b>
+    </div>
+    <div class="modal-body">
+        <h2>Modelo Framingham</h2>
+        <p>
+            El metodo Framingham constituye un pilar básico, y en diferentes formas es ampliamente utilizado para la toma de decisiones terapéuticas en base a la estimación de riesgo proporcionada por el modelo al introducir las características de riesgo del paciente
+            concreto. Es tan popular que incluso existen calculadoras de bolsillo que implementan el algoritmo, y también diferentes páginas Web en las que se puede efectuar dicho cálculo.
+        </p>
+        <b>
       Cálculo del riesgo mediante el modelo de Framingham que utiliza el valor del colesterol total:
     </b>
-    <img src="../../assets/img/Help-Img/formula.PNG" alt="Formula">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6">
-          <p>
-            Tabla de coeficientes:
-          </p>
-          <img src="../../assets/img/Help-Img/coeficientes.PNG" alt="coeficientes">
+        <img src="../../assets/img/Help-Img/formula.PNG" alt="Formula">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <p>
+                        Tabla de coeficientes:
+                    </p>
+                    <img src="../../assets/img/Help-Img/coeficientes.PNG" alt="coeficientes">
+                </div>
+                <div class="col-6 align-self-center">
+                    <p>
+                        Tabla de riesgo medios a 10 años
+                    </p>
+                    <img src="../../assets/img/Help-Img/riesgo-medio.PNG">
+                </div>
+            </div>
         </div>
-        <div class="col-6 align-self-center">
-          <p>
-            Tabla de riesgo medios a 10 años
-          </p>
-          <img src="../../assets/img/Help-Img/riesgo-medio.PNG">
-        </div>
-      </div>
+        <p class="mt-2">
+            Valor B = exp(L - G)
+        </p>
+        <p class="mt-2">
+            Función de supervivencia:
+        </p>
+        <img src="../../assets/img/Help-Img/funcion-supervivencia.PNG">
+        <p class="mt-2">
+            Riesgo = 1 - Sᴮ
+        </p>
+        <p>
+            Material de estudio Framingham: <a href="https://www.ahajournals.org/doi/epub/10.1161/01.CIR.97.18.1837">Prediction of Coronary Heart Disease Using Risk Factor Categories</a>
+        </p>
     </div>
-    <p class="mt-2">
-      Valor B = exp(L - G)
-    </p>
-    <p class="mt-2">
-      Función de supervivencia:
-    </p>
-    <img src="../../assets/img/Help-Img/funcion-supervivencia.PNG">
-    <p class="mt-2">
-      Riesgo = 1 - Sᴮ
-    </p>
-    <p>
-      Material de estudio Framingham: <a href="https://www.ahajournals.org/doi/epub/10.1161/01.CIR.97.18.1837">Prediction of Coronary Heart Disease Using Risk Factor Categories</a>
-    </p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-  </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
 </ng-template>

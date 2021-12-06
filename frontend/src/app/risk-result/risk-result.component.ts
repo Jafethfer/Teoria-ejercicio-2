@@ -9,14 +9,15 @@ import { DecimalPipe } from '@angular/common';
   styleUrls: ['./risk-result.component.css']
 })
 export class RiskResultComponent implements OnInit {
-  @Input() riskResult = 0
+  @Input() riskResult = 0;
   faHeart = faHeart;
  
   constructor(private riesgoServicio:RiesgoCardiacoService) { }
 
   ngOnInit(): void {
+  console.log(this.riskResult);
+  
 
-    this.riskResult = Math.round(this.riesgoServicio.riesgoCardiaco('m',57,238,52,150,92,false,false)*100);
   }
 
 }

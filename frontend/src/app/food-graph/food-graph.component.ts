@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import {
   Chart,
   ArcElement,
@@ -71,7 +71,7 @@ export class FoodGraphComponent implements OnChanges,OnInit {
     for(let index in this.graphedFood){
       if(this.graphedFood[index].status=='active'){
         this.labels.push(this.graphedFood[index].alimento)
-        this.graphData.push(this.graphedFood[index].colesterol)
+        this.graphData.push(this.graphedFood[index].anual)
       }
     }
 
@@ -102,16 +102,18 @@ export class FoodGraphComponent implements OnChanges,OnInit {
 
   }
 
-  ngOnChanges(){
+  ngOnChanges(changes:SimpleChanges):void{
     if(this.myChart==undefined){
       return
     }
     this.myChart.destroy()
     this.graphData = []
-    for(let index in this.graphedFood){
-      if(this.graphedFood[index].status=='active'){
-        this.labels.push(this.graphedFood[index].alimento)
-        this.graphData.push(this.graphedFood[index].colesterol)
+    this.labels = []
+    for(let index in changes.graphedFood.currentValue.alimentos){
+      if(changes.graphedFood.currentValue.alimentos[index].status=='active'){
+        this.labels.push(changes.graphedFood.currentValue.alimentos[index].alimento)
+        this.graphData.push(changes.graphedFood.currentValue.alimentos[index].anual)
+        console.log(changes.graphedFood.currentValue.alimentos[index].anual)
       }
     }
     this.data = {
@@ -120,7 +122,7 @@ export class FoodGraphComponent implements OnChanges,OnInit {
           label: 'Contenido de colesterol',
           backgroundColor: 'rgb(25, 99, 132)',
           borderColor: 'rgb(25, 99, 132)',
-          data: [5,3,2,4,1],
+          data: this.graphData,
       }]
     };
     this.myChart = new Chart("myChar", {

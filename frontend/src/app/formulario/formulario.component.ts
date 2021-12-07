@@ -13,11 +13,11 @@ export class FormularioComponent implements OnInit {
   faQuestionCircle = faQuestionCircle
   formularioDatos = new FormGroup({
     Sexo: new FormControl('m'),
-    Edad: new FormControl('57'),
-    Colesterol: new FormControl('238'),
-    HDL: new FormControl('52'),
-    PresionS: new FormControl('150'),
-    PresionD: new FormControl('92'),
+    Edad: new FormControl(57),
+    Colesterol: new FormControl(238),
+    HDL: new FormControl(52),
+    PresionS: new FormControl(150),
+    PresionD: new FormControl(92),
     Diabetes: new FormControl('False'),
     Fumador: new FormControl('False')
   })
@@ -35,7 +35,7 @@ export class FormularioComponent implements OnInit {
       JSON.stringify(this.historial);
     }else{
       this.historial = JSON.parse(localStorage.getItem('historial')+'')
-      
+
     }
     console.log(this.historial);
 
@@ -49,6 +49,7 @@ export class FormularioComponent implements OnInit {
     let Diabetes = false
     let Fumador = false
     let Edad = this.formularioDatos.get('Edad')?.value
+    let currentEdad = Edad
     let results = []
     let labels = []
     if(this.formularioDatos.get('Diabetes')?.value=='True'){
@@ -86,7 +87,7 @@ export class FormularioComponent implements OnInit {
     this.resultsEvent.emit({results:results,labels:labels})
     this.historial.push({
       sexo: this.formularioDatos.get('Sexo')?.value,
-      edad: Edad,
+      edad: currentEdad,
       colesterol: this.formularioDatos.get('Colesterol')?.value,
       HDL: this.formularioDatos.get('HDL')?.value,
       PresionS: this.formularioDatos.get('PresionS')?.value,
